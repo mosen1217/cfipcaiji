@@ -4,7 +4,7 @@ import re
 import os
 
 # 目标URL列表
-urls = ['https://www.nslookup.io/domains/ips.meizitu.net/dns-records/1', 
+urls = ['https://www.nslookup.io/domains/ips.meizitu.net/dns-records/', 
         'https://ip.164746.xyz'
         ]
 
