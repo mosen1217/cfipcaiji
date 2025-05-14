@@ -9,8 +9,7 @@ urls = ['https://www.nslookup.io/domains/ips.meizitu.net/dns-records/',
         ]
 
 # 正则表达式用于匹配IP地址
-ip_pattern = r'\b(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}' \
-             r'(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\b'
+ip_pattern = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
 
 # 检查ip.txt文件是否存在,如果存在则删除它
 if os.path.exists('ip.txt'):
