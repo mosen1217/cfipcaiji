@@ -4,12 +4,13 @@ import re
 import os
 
 # 目标URL列表
-urls = ['https://monitor.gacjie.cn/page/cloudflare/ipv4.html', 
+urls = ['https://www.nslookup.io/domains/ips.meizitu.net/dns-records/', 
         'https://ip.164746.xyz'
         ]
 
 # 正则表达式用于匹配IP地址
-ip_pattern = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
+ip_pattern = r'\b(?:(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\.){3}' \
+             r'(?:25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)\b'
 
 # 检查ip.txt文件是否存在,如果存在则删除它
 if os.path.exists('ip.txt'):
@@ -25,7 +26,7 @@ with open('ip.txt', 'w') as file:
         soup = BeautifulSoup(response.text, 'html.parser')
         
         # 根据网站的不同结构找到包含IP地址的元素
-        if url == 'https://monitor.gacjie.cn/page/cloudflare/ipv4.html':
+        if url == 'https://www.nslookup.io/domains/ips.meizitu.net/dns-records/':
             elements = soup.find_all('tr')
         elif url == 'https://ip.164746.xyz':
             elements = soup.find_all('tr')
